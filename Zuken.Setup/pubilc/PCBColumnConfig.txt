@@ -1,0 +1,9 @@
+﻿#"#" 表示注释,使用 "，" 分割, 如果想要忽略该列，请将该列对应的表头设置为空字符串。eg: reference list,,Part Name,Layer； 忽略了第二例
+# 界面 列名称： 
+# 值: Value
+# 封装: Footprint
+# 封装描述信息: FootPrintDescription
+# reference list 表示位号
+# Part Name 表示物料编码
+# Layer 表示层
+MaterialCode,reference list,Part Name,Layer

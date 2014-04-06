@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<IntegrationConfiguration>
+  <appSettings>
+    <add key="ALLEGROCIS" value="Proway.PLM.Document.DocumentOperateDSN, Proway.PLM.BLL"/>
+    <add key="ALLEGROPCB" value="Proway.PLM.Document.DocumentOperatePCB, Proway.PLM.BLL"/>
+    <add key="ADSCH1" value="Proway.PLM.Document.DocumentOperateADSCH, Proway.PLM.BLL"/>
+    <add key="ADPCB1" value="Proway.PLM.Document.DocumentOperateADPCB, Proway.PLM.BLL"/>
+    <add key="ADSCH" value="Zuken.Server.ZukenSchOperate, Zuken.Server"/>
+    <add key="ADPCB" value="Zuken.Server.ZukenPcbOperate, Zuken.Server"/>
+    <add key="AUTOCAD" value="Proway.PLM.Document.DocumentOperateCAD2D, Proway.PLM.BLL"/>
+    <add key="SW" value="Proway.PLM.Document.DocumentOperateSW, Proway.PLM.BLL"/>
+    <add key="CAXA" value="Proway.PLM.Document.DocumentOperateCAD2D, Proway.PLM.BLL"/>
+    <add key="GSTARCAD" value="Proway.PLM.Document.DocumentOperateCAD2D, Proway.PLM.BLL"/>
+    <add key="ZWCAD" value="Proway.PLM.Document.DocumentOperateCAD2D, Proway.PLM.BLL"/>
+    <add key="PROE" value="Proway.PLM.Document.DocumentOperateCAD3D, Proway.PLM.BLL"/>
+    <add key="SE" value="Proway.PLM.Document.DocumentOperateCAD3D, Proway.PLM.BLL"/>
+    <add key="UG" value="Proway.PLM.Document.DocumentOperateCAD3D, Proway.PLM.BLL"/>
+    <add key="CATIA" value="Proway.PLM.Document.DocumentOperateCAD3D, Proway.PLM.BLL"/>
+    <add key="INVENTOR" value="Proway.PLM.Document.DocumentOperateCAD3D, Proway.PLM.BLL"/>
+    <add key="ZW3D" value="Proway.PLM.Document.DocumentOperateCAD3D, Proway.PLM.BLL"/>
+    <add key="AD6" value="Proway.PLM.Document.DocumentOperateORCAD, Proway.PLM.BLL"/>
+    <add key="PADSLOGIC" value="Proway.PLM.Document.DocumentOperateDSN, Proway.PLM.BLL"/>
+    <add key="PROTEL" value="Proway.PLM.Document.DocumentOperateDSN, Proway.PLM.BLL"/>
+    <add key="EPLAN" value="Proway.PLM.Document.DocumentOperateCAD2D, Proway.PLM.BLL"/>
+  </appSettings>
+</IntegrationConfiguration>

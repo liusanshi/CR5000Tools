@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3EAB79CE-3DFA-4DA7-8FD0-ACEC24940CB4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zuken.Setup</RootNamespace>
+    <AssemblyName>Kingdee.PLM.Integration.Setup.Zuken</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Kingdee.PLM.Integration.Setup.Abstract, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Kingdee.PLM.Integration.Setup.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Kingdee.PLM.Integration.Setup.Install, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ZukenSetup.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\Kingdee.PLM.Integration.Setup.Abstract.dll" />
+    <Content Include="lib\Kingdee.PLM.Integration.Setup.Common.dll" />
+    <Content Include="lib\Kingdee.PLM.Integration.Setup.Install.dll" />
+    <Content Include="pubilc\icon.PNG" />
+    <Content Include="pubilc\Integration.config.xml" />
+    <Content Include="pubilc\Kingdee.PLM.Integration.Client.Zuken.dll" />
+    <Content Include="pubilc\Kingdee.PLM.Integration.Setup.Zuken.dll" />
+    <Content Include="pubilc\log.jpg" />
+    <Content Include="pubilc\ModifyConfig.exe" />
+    <Content Include="pubilc\openCADFileManage.js" />
+    <Content Include="pubilc\openCADFileManage.vbs" />
+    <Content Include="pubilc\PCBColumnConfig.txt" />
+    <Content Include="pubilc\readme.txt" />
+    <Content Include="pubilc\Vici.Core.dll" />
+    <Content Include="pubilc\ZKPCBpcb.gif" />
+    <Content Include="pubilc\ADPRJcmd.gif" />
+    <Content Include="pubilc\ZKSCHsht.gif" />
+    <Content Include="pubilc\ZSKIntegration.js" />
+    <Content Include="pubilc\Zuken.Command.exe" />
+    <Content Include="pubilc\Zuken.Common.dll" />
+    <Content Include="pubilc\Zuken.Server.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pubilc\component.ini" />
+    <None Include="pubilc\proj.tpl" />
+    <None Include="pubilc\部署.cmd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy "Kingdee.PLM.Integration.Setup.Zuken.dll" "..\..\pubilc\Kingdee.PLM.Integration.Setup.Zuken.dll"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
