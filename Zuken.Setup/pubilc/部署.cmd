@@ -75,7 +75,6 @@ copy /y "log.jpg" "%Integration%\Resources\Zuken\log.jpg"
 copy /y "icon.png" "%Integration%\Resources\Zuken\icon.png"
 
 
-
 echo 插件部署完成
 echo.
 echo 在客户端安装插件即可使用

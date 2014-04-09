@@ -49,7 +49,7 @@ namespace ModifyConfig
                     return ModifyType.Delete;
                 case "replace":
                     return ModifyType.Replace;
-                case "append"://追加的情况
+                case "append":
                     return ModifyType.Append;
             }
         }
