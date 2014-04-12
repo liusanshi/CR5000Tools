@@ -19,8 +19,8 @@ pushd $String.Format("%~dp0\\\"{0}\"", PrjName)
 
 if not exist "bd" ( mkdir "bd" )
 pushd "bd"
-if exist $String.Format("\"{0}.pcb\"", PrjName) (del /f /q $String.Format("\"{0}.pcb\"", PrjName) )
 if exist $String.Format("\"..\\..\\{0}.pcb\"", PrjName) (
+if exist $String.Format("\"{0}.pcb\"", PrjName) (del /f /q $String.Format("\"{0}.pcb\"", PrjName) )
 move /y $String.Format("\"..\\..\\{0}.pcb\"", PrjName) $String.Format("\"{0}.pcb\"", PrjName) )
 if not exist $String.Format("\"{0}.rfb\"", PrjName) (
 echo $String.Concat("Relation ../sd/", PrjName, ".cir>>") $String.Format("\"{0}.rfb\"", PrjName) )
@@ -46,8 +46,9 @@ echo ${x}>> "rcpath"
 )
 
 #foreach(x in SchList)
+if exist $String.Format("\"..\\..\\..\\{1}_{0}\"", x, PrjName) (
 if exist $String.Format("\"{1}_{0}\"", x, PrjName) (del /f /q $String.Format("\"{1}_{0}\"", x, PrjName) )
-if exist $String.Format("\"..\\..\\..\\{1}_{0}\"", x, PrjName) (move /y $String.Format("\"..\\..\\..\\{1}_{0}\"", x, PrjName) $String.Format("\"{0}\"", x) ) 
+move /y $String.Format("\"..\\..\\..\\{1}_{0}\"", x, PrjName) $String.Format("\"{0}\"", x) ) 
 #end
 
 #if(IsSch)
