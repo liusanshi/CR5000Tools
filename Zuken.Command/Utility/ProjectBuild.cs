@@ -230,14 +230,14 @@ namespace Zuken.Command.Utility
                 ruldata = Convert.ToBase64String(File.ReadAllBytes(RULPath));
                 if (!string.IsNullOrEmpty(ruldata))
                 {
-                    ruldata = RULTARGET + ruldata + "\r\n";
+                    ruldata = "\r\n" + RULTARGET + ruldata;
                 }
             }
             else
             {
                 throw new Exception("缺少rul文件！");
             }
-            return ruldata + BuildCmd(new ZukenFileType[] { ZukenFileType.ZKPCB, ZukenFileType.ZKSCH });
+            return BuildCmd(new ZukenFileType[] { ZukenFileType.ZKPCB, ZukenFileType.ZKSCH }) + ruldata;
         }
         /// <summary>
         /// 保存项目文件
