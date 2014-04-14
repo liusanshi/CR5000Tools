@@ -21,7 +21,7 @@ namespace Zuken.Server.DAL
         /// <returns></returns>
         public DocumentVersion GetDocumentVersionByFileName(string fileName, string Appid)
         {
-            string query = string.Format("From DocumentVersion a Where a.FileName= '{0}' and a.AppType='{1}' and a.DeleteFlag=0 order by a.CreateDate desc", fileName, Appid);
+            string query = string.Format("From DocumentVersion a Where a.FileName= '{0}' and a.StateId in (1,2,3,4) and a.AppType='{1}' and a.DeleteFlag=0 order by a.CreateDate desc", fileName, Appid);
 
             var VerList = base.Session.CreateQuery(query).List<DocumentVersion>();
             if (VerList == null || VerList.Count == 0)
