@@ -14,16 +14,38 @@ namespace Zuken.Server.DAL
     public class DocversionManager : BaseDataAccess<DocumentVersion>
     {
         /// <summary>
-        /// 
+        /// 获取T版或有效版
         /// </summary>
         /// <param name="fileName"></param>
         /// <param name="Appid"></param>
         /// <returns></returns>
         public DocumentVersion GetDocumentVersionByFileName(string fileName, string Appid)
         {
-            string query = string.Format("From DocumentVersion a Where a.FileName= '{0}' and a.AppType='{1}' and a.DeleteFlag=0 and (a.StateId=2 or a.IsEffective=1) ", fileName, Appid);
+            string query = string.Format("From DocumentVersion a Where a.FileName= '{0}' and a.AppType='{1}' and a.DeleteFlag=0 order by a.CreateDate desc", fileName, Appid);
 
-            return base.Session.CreateQuery(query).SetMaxResults(1).UniqueResult<DocumentVersion>();
+            var VerList = base.Session.CreateQuery(query).List<DocumentVersion>();
+            if (VerList == null || VerList.Count == 0)
+            {
+                return null;
+            }
+            DocumentVersion documentVersion = (DocumentVersion)VerList[0];
+            if (documentVersion.StateId == 2)
+            {
+                return documentVersion;
+            }
+            for (int i = 1; i < VerList.Count; i++)
+            {
+                DocumentVersion documentVersion2 = (DocumentVersion)VerList[i];
+                if (documentVersion2.StateId == 2)
+                {
+                    return documentVersion2;
+                }
+                if (documentVersion2.IsShow == 1)
+                {
+                    documentVersion = documentVersion2;
+                }
+            }
+            return documentVersion;
         }
     }
 }
