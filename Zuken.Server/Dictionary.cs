@@ -7,6 +7,9 @@ using Proway.PLM.Material;
 
 namespace Zuken.Server
 {
+    /// <summary>
+    /// 字典
+    /// </summary>
     static class Key
     {
         /// <summary>

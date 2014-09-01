@@ -6,6 +6,9 @@ using Zuken.Server.DAL;
 
 namespace Zuken.Server.Validator
 {
+    /// <summary>
+    /// 相关对象的验证
+    /// </summary>
     public class ValidateZKRObjDocExists : DefaultValidator
 	{
         private DocversionManager manager = new DocversionManager();

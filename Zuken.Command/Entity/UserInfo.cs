@@ -4,6 +4,9 @@ using Zuken.Command.Utility;
 
 namespace Zuken.Command.Entity
 {
+    /// <summary>
+    /// 用户信息类
+    /// </summary>
     public class UserInfo    
 	{
 		private string m_ServerUrl = string.Empty;

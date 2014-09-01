@@ -8,6 +8,9 @@ using Vici.Core;
 
 namespace Zuken.Command.Utility
 {
+    /// <summary>
+    /// 模板帮助类
+    /// </summary>
     public static class TemplateHelper
     {
         /// <summary>

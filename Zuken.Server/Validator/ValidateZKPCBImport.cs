@@ -10,6 +10,9 @@ using Proway.Framework.LanguagePack;
 
 namespace Zuken.Server.Validator
 {
+    /// <summary>
+    /// pcb导入的验证
+    /// </summary>
     class ValidateZKPCBImport : DefaultValidator
     {
         private FolderManager folderManager = new FolderManager();

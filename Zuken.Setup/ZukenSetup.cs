@@ -9,6 +9,9 @@ using Kingdee.PLM.Integration.Setup.Common;
 
 namespace Zuken.Setup
 {
+    /// <summary>
+    /// 集成插件安装方法
+    /// </summary>
     public class ZukenSetup : InstallInterface
     {
         private StringBuilder CheckString = new StringBuilder();
@@ -391,16 +394,28 @@ namespace Zuken.Setup
         #endregion
 
         #region InstallInterface 成员
+        /// <summary>
+        /// 卸载方法
+        /// </summary>
+        /// <returns></returns>
         public bool Uninstall()
         {
             DeleteFile();
             return true;
         }
+        /// <summary>
+        /// 回滚方法
+        /// </summary>
+        /// <returns></returns>
         public bool Rollback()
         {
             DeleteFile();
             return true;
         }
+        /// <summary>
+        /// 安装方法
+        /// </summary>
+        /// <returns></returns>
         public bool Install()
         {
             if (this.OnProgressChanged != null)
@@ -419,7 +434,10 @@ namespace Zuken.Setup
             }
             return true;
         }
-
+        /// <summary>
+        /// 安装时检查环境
+        /// </summary>
+        /// <returns></returns>
         public CheckEnviromentStateMessage CheckEnviroment()
         {
             string text = this.CheckMain();
@@ -434,6 +452,10 @@ namespace Zuken.Setup
             }
             return result;
         }
+        /// <summary>
+        /// 卸载时检查环境
+        /// </summary>
+        /// <returns></returns>
         public CheckEnviromentStateMessage CheckRemoveEnviroment()
         {
             this.CheckString.Length = 0;
@@ -450,92 +472,129 @@ namespace Zuken.Setup
             }
             return result;
         }
+        /// <summary>
+        /// 显示的描述信息
+        /// </summary>
         public string Description
         {
             get { return "\u3000\u3000CR 5000集成插件的安装将使您从CR 5000软件中直接执行金蝶PLM系统操作，例如：检入、检出等。"; }
         }
-
+        /// <summary>
+        /// 文件夹名称
+        /// </summary>
         public string DirName
         {
             get { return "Zuken"; }
         }
-
+        /// <summary>
+        /// 集成哦的标识
+        /// </summary>
         public string ID
         {
             get { return "6390DE36-D969-4B78-9E28-E5B14E7B15B8"; }
         }
-
+        /// <summary>
+        /// 是否中断
+        /// </summary>
         public bool Interrupt
         {
             private get;
             set;
         }
-
+        /// <summary>
+        /// 是否必须
+        /// </summary>
         public bool IsNecessary
         {
             get { return false; }
         }
-
+        /// <summary>
+        /// 语言
+        /// </summary>
         public string LanguageMark
         {
             get;
             set;
         }
-
+        /// <summary>
+        /// 日志路径
+        /// </summary>
         public string LogFilePath
         {
             private get;
             set;
         }
-
+        /// <summary>
+        /// 模块名称
+        /// </summary>
         public string ModuleName
         {
             get { return "CR 5000集成插件"; }
         }
-
+        /// <summary>
+        /// 需要时间长度
+        /// </summary>
         public int NeedTime
         {
             get { return 15; }
         }
-
+        /// <summary>
+        /// 消息事件
+        /// </summary>
         public event MessageChanged OnMessageChanged;
-
+        /// <summary>
+        /// 进度事件
+        /// </summary>
         public event ProgressChanged OnProgressChanged;
-
+        /// <summary>
+        /// 父id
+        /// </summary>
         public string ParentId
         {
             get { return string.Empty; }
         }
 
-
+        /// <summary>
+        /// 顺序号
+        /// </summary>
         public float SortIndex
         {
             get { return 20F; }
         }
-
+        /// <summary>
+        /// 源文件路径
+        /// </summary>
         public string SourceDefaultDir
         {
             get;
             set;
         }
-
+        /// <summary>
+        /// 是否暂停
+        /// </summary>
         public bool Suspend
         {
             get;
             set;
         }
-
+        /// <summary>
+        /// 总共大小
+        /// </summary>
         public long TotalSize
         {
             get { return 9550000L; }
         }
-
+        /// <summary>
+        /// 安装路径
+        /// </summary>
         public string UserDefaultDir
         {
             get;
             set;
         }
-
+        /// <summary>
+        /// 版本
+        /// </summary>
         public float Version
         {
             get { return 1F; }
